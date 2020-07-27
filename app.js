@@ -94,7 +94,7 @@ if (navigator.geolocation) {
     domOutput.focus();
   }
 
-  domButton.addEventListener('click', fetchGeo, false);
+domButton.addEventListener('click', fetchGeo, false);
 } else {
   userFeedback('This app uses features not supported by your browser');
   domOutput.focus();
