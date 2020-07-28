@@ -90,7 +90,9 @@ if (navigator.geolocation) {
     // Display Colour Value
     domColorvalue.textContent = domOutputcolour;
     domOutput.style.backgroundColor = domOutputcolour;
-    domOutput.appendChild(domColorvalue);   
+    domOutput.appendChild(domColorvalue);
+    // do a location lookup ... mongodb for a venue ... closest? or an Array?
+    // use a redirect
     domOutput.focus();
   }
 

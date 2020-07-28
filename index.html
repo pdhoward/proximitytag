@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'; child-src 'self'; manifest-src 'self'; worker-src 'self';">
-<title>PROXIMITY | connected conversations</title>
-<meta name="description" content="Location based messaging and advertising">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<link rel="stylesheet" href="styles.css">
-<link rel="manifest" href="manifest.json">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="location">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#A3E0CF">
-<link rel="apple-touch-icon" href="webclip-180x180.png">
-<link rel="icon" sizes="196x196" href="webclip-196x196.png">
-<link rel="icon" sizes="128x128" href="webclip-128x128.png">
-<link rel="icon" sizes="64x64" href="webclip-64x64.png">
-<meta name="application-name" content="Colordinates">
-<meta property="og:title" content="Colordinates">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://proximitytag.netlify.app">
-<meta property="og:description" content="location based messaging and advertising">
-<meta property="og:image" content="https://plfstr.github.io/colordinates/webclip-196x196.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="196">
-<meta property="og:image:height" content="196">
-<meta property="og:site-name" content="proximitytag">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@github">
-<meta name="twitter:creator" content="@plfstr">
-<meta name="twitter:domain" content="https://proximitytag.netlify.app">
-<meta name="twitter:image" content="webclip-128x128.png">
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' https://stackpath.bootstrapcdn.com; script-src 'self'; img-src 'self'; font-src 'self' https://stackpath.bootstrapcdn.com; child-src 'self'; manifest-src 'self'; worker-src 'self';">
+	<title>PROXIMITY | connected conversations</title>
+	<meta name="description" content="Location based messaging and advertising">
+	<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="location">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="theme-color" content="#A3E0CF">
+	<link rel="apple-touch-icon" href="webclip-180x180.png">
+	<link rel="icon" sizes="196x196" href="webclip-196x196.png">
+	<link rel="icon" sizes="128x128" href="webclip-128x128.png">
+	<link rel="icon" sizes="64x64" href="webclip-64x64.png">
+	<meta name="application-name" content="Colordinates">
+	<meta property="og:title" content="Colordinates">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://proximitytag.netlify.app">
+	<meta property="og:description" content="location based messaging and advertising">
+	<meta property="og:image" content="https://plfstr.github.io/colordinates/webclip-196x196.png">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="196">
+	<meta property="og:image:height" content="196">
+	<meta property="og:site-name" content="proximitytag">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@github">
+	<meta name="twitter:creator" content="@plfstr">
+	<meta name="twitter:domain" content="https://proximitytag.netlify.app">
+	<meta name="twitter:image" content="webclip-128x128.png">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="manifest" href="manifest.json">
 </head>
 <body>
-<main role="main">
-	
-	
-		
+<main role="main">		
 	<header role="banner">
 		<h1 translate="no">PROXIMITY</h1>
 	</header>
@@ -51,11 +49,20 @@
 			
 			<button class="block" id="huebutton" aria-controls="output">MESSAGE ME</button>
 				
-		<p class="txt-small" role="note">&bull; PROXIMITY uses geolocation &bull; PROXIMITY is the trusted and secure platform for location services &bull; Your location is never shared</p>
+		<p class="txt-small" role="note">&bull; Your location is never shared</p>
 	</article>
 
 	<footer>
-		<p class="txt-small" role="contentinfo"><strong><span translate="no">A solution</span> from <span translate="no">Strategic Machines</span> (<a href="https://twitter.com/StrategicMachi1">follow</a>)</strong></p>
+		<div class="col-md-4 mb-3 mb-md-0">
+			<div class="card py-4 h-100">
+				<div class="card-body text-center">
+					<hr class="my-4" />					
+					<div class="small text-black-50">
+						<a href="https://twitter.com/StrategicMachi1"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</footer>
 
 </main>
