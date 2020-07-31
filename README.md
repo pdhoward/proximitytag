@@ -6,7 +6,8 @@ PROXIMITY TAG permits a platform user to identify their location and receive spo
 
 ### Features
 
-* Coming soon
+* Implements lambda functions for mongodb actions
+* Employs geospatial search with mongodb
 
 ### Usage
 

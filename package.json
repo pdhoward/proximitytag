@@ -6,7 +6,7 @@
   "scripts": {
     "build": "netlify-lambda build functions",
     "👇 ABOUT-local": "💡 spin up test server on port 9000 to test netlify functions locally",
-    "serve": "node test/server",
+    "serve": "node proxy/server",
     "fnrun": "netlify-lambda serve functions",
     "local": "npm-run-all --parallel fnrun serve",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,7 +29,7 @@
   "homepage": "https://github.com/pdhoward/proximity-tag#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "mongodb": "^3.5.9",
+    "mongodb": "^3.6.0",
     "netlify-lambda": "^2.0.1",
     "node-fetch": "^2.6.0"
   },

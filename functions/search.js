@@ -1,42 +1,30 @@
 require('dotenv').config()
 
 /////////////////////////////////////////////////
-///   Handle Beta and Newsletter subscribers  //
+///       Handle Venue Geospatial Search      //
 //      copyright 2020 Strategic Machines    //
 //////////////////////////////////////////////
 
-// logic for processing a new subscriber
-const {createConnection} =  require('./db/connection')
 const {createClient} =      require('./db/client')
+const {createConnection} =  require('./db/connection')
 const {isConnected} =       require('./db/isConnected')
-const sgMail =              require('./email')
 
 let conn
 
-const mail = (mailObject) => {
-  return new Promise((resolve, reject) => {
-    sgMail.send(mailObject)
-    .then(([result, body]) => { 
-      resolve({statusCode: 200})
-    })
-    .catch(error => reject(error))
-  })
-}
+// https://docs.mongodb.com/v3.6/geospatial-queries/
 
 exports.handler = async function(event, context) {
   let client 
-  if (isConnected(conn)) {
-    console.log(`-------------using connection`)
+  if (isConnected(conn)) {    
     client = await createClient(conn)
-  } else {
-    console.log(`------------creating connection`)
+  } else {    
     conn = await createConnection()
     client = await createClient(conn)
   }   
-  let subscriber = JSON.parse(event.body)      
+  let location = JSON.parse(event.body)      
   
-  console.log(`----FUNCTION NEWSLETTER SUBSCRIBER SUBSCRIBER -------`)   
-  const response = await client.getSubscriber(subscriber)    
+  console.log(`----FUNCTION FIND VENUES -------`)   
+  const response = await client.getVenues(location)    
   console.log(response)
 
   if (!response.isVerified) {
@@ -47,10 +35,10 @@ exports.handler = async function(event, context) {
       html: '<strong></strong>'
     }
     mailObject.to = response.email
-    mailObject.text = `Your verification code is ${response.token}. If you did not subscribe to the PROXIMITY newsletter, please ignore this email.`
-    mailObject.html= `<strong>Your verification code is ${response.token}. If you did not subscribe to the Proximity newsletter, please ignore this email.<strong>`
+    mailObject.text = `Your verification code is ${response.token}. If you did not apply for early access to the Proximity beta program, please ignore this email.`
+    mailObject.html= `<strong>Your verification code is ${response.token}. If you did not apply for early access to the Proximity beta program, please ignore this email.<strong>`
     // mail the response
-    const result = await mail(mailObject)
+    const result = await beta(mailObject)
      
     return {
         headers: {

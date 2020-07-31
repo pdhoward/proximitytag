@@ -1,4 +1,4 @@
-'use strict';
+
 require('dotenv').config();
 
 ///////////////////////////////////////////////////////////////
@@ -54,7 +54,7 @@ app.use('*', (req, res, next) => {
 app.use('*', [proxy])
 
 // start server
-const port = process.env.VCAP_APP_PORT || process.env.localport
+const port = process.env.localport || 4000
 
 server.listen(port, () => {
     console.log(`listening on port ${port}`) 

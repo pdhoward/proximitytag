@@ -31,12 +31,12 @@ if (navigator.geolocation) {
   }
   
   if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register('sw.js',{scope:'./'}).then(function(reg) {
-		console.log('Service Worker Registered!');
- 		domFooter.textContent += ' \u2022 Available Offline';
-	}).catch(function(error) {
-		console.log('Registration failed with ' + error);
-	});
+    navigator.serviceWorker.register('sw.js',{scope:'./'}).then(function(reg) {
+      console.log('Service Worker Registered!');
+      domFooter.textContent += ' \u2022 Available Offline';
+    }).catch(function(error) {
+      console.log('Registration failed with ' + error);
+    });
   }
   
   function userFeedback(m) {
@@ -94,6 +94,38 @@ if (navigator.geolocation) {
     // do a location lookup ... mongodb for a venue ... closest? or an Array?
     // use a redirect
     domOutput.focus();
+  }
+
+  const processGeoLocation = (form, e) => {
+    const email = document.getElementById('email').value
+    console.log(`---------STEP 1 - PROCESS Geo Location----`)
+    console.log(email) 
+    return fetch(`/.netlify/functions/geosearch`, {
+      headers: {
+        'Content-Type': 'application/json'},
+      method: 'POST',
+      body: JSON.stringify({email})
+    })
+    .then( async (result) => {
+      console.log(`-----STEP 2 - Present Venue Options ----`)
+      //console.log(result)
+      //const response = await result.json()
+      em = await result.json()
+      console.log(em)
+
+      // send to canvas
+      if (!em.isVerified) {
+        $('#dspemail').css('display','none');
+        $('#dspverify').css('display','inline');
+      } else {
+        form.innerHTML = duplicate;
+      }         
+                    
+      return {message: 'success'}
+    })
+    .catch(error => {
+      form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
+    })
   }
 
 domButton.addEventListener('click', fetchGeo, false);

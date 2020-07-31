@@ -1,18 +1,4 @@
 
 
 
-https://mongodb.github.io/node-mongodb-native/2.2/tutorials/geospatial-search/
-
-
----
-
-1. see data/hotels for 5000 hotel locations and geocodes
-
-
-2. tutorial example
-https://github.com/nirajkiul/mongodb-geospatial
-
-3 open datasets
-https://data.world/awram/us-places-of-worship
-
-data/austinfood -- food establishmenets under 500 sq ft -- but will need to geo code addresses
+https://docs.mongodb.com/v3.6/geospatial-queries/
