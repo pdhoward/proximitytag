@@ -5,30 +5,24 @@
 ///////////////////////////////////////////////////////////
 const fetch =               require('node-fetch')
 
-const newsubscriber = "http://localhost:9000/newsubscriber.js"
-const betasubscriber = "http://localhost:9000/betasubscriber.js"
-const verifysubscriber = "http://localhost:9000/verifysubscriber.js"
-const GETSUB = `/.netlify/functions/newsubscriber`
-const GETBETA = `/.netlify/functions/betasubscriber`
-const VERIFYSUB = `/.netlify/functions/verifysubscriber`
-let URL = "http://localhost:9000/newsubscriber.js"
+const search = "http://localhost:9000/search.js"
+const select = "http://localhost:9000/select.js"
+const searchFn = `./netlify/functions/search.js`
+const selectFn = `./netlfiy/functions/select.js`
+let URL = "https://proximity-demo.vercel.app/unknown"
 
 const proxy = (router) => {
 
 	router.use(async(req, res, next) => {
     console.log(`----------------in proxy server----------`)    
       
-    if (req.originalUrl == GETSUB){
-      URL = newsubscriber
+    if (req.originalUrl == searchFn){
+      URL = search
     } 
     
-    if (req.originalUrl == GETBETA){
-      URL = betasubscriber
-    }
-
-    if (req.originalUrl == VERIFYSUB){
-      URL = verifysubscriber
-    }
+    if (req.originalUrl == selectFn){
+      URL = select
+    }   
 
     return new Promise(async (resolve, reject) =>{
       try {       
