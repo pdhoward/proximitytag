@@ -27,18 +27,7 @@ exports.handler = async function(event, context) {
   const response = await client.getVenues(location)    
   console.log(response)
 
-  if (!response.isVerified) {
-    const mailObject = {
-      from: '"Strategic Machines 👥" <strategicmachines@gmail.com>',
-      subject: 'PROXIMITY VERIFICATION CODE',
-      text: '',
-      html: '<strong></strong>'
-    }
-    mailObject.to = response.email
-    mailObject.text = `Your verification code is ${response.token}. If you did not apply for early access to the Proximity beta program, please ignore this email.`
-    mailObject.html= `<strong>Your verification code is ${response.token}. If you did not apply for early access to the Proximity beta program, please ignore this email.<strong>`
-    // mail the response
-    const result = await beta(mailObject)
+  
      
     return {
         headers: {
@@ -48,13 +37,5 @@ exports.handler = async function(event, context) {
         body: JSON.stringify(response)
       }    
      
-    } else {
-      return {
-          headers: {
-            'Content-Type': 'application/json'        
-          },
-          statusCode: 200,
-          body: JSON.stringify(response)
-        } 
-    }
+  
 }
