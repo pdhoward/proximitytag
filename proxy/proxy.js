@@ -7,8 +7,8 @@ const fetch =               require('node-fetch')
 
 const search = "http://localhost:9000/search.js"
 const select = "http://localhost:9000/select.js"
-const searchFn = `./netlify/functions/search.js`
-const selectFn = `./netlfiy/functions/select.js`
+const searchFn = `/.netlify/functions/search`
+const selectFn = `/.netlify/functions/select`
 let URL = "https://proximity-demo.vercel.app/unknown"
 
 const proxy = (router) => {
