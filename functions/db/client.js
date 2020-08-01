@@ -30,43 +30,32 @@ exports.createClient = (client) => {
   
   db.getVenues = (obj) => {
     return new Promise ((resolve, reject) => {
-      let email = obj.email
-      let name = obj.name
-      let company = obj.coname
-      let sector = obj.sector
-      let website = obj.website 
-      let comments = obj.comments      
-      client.db().collection('markets').findOne({email: email}, (err, result) => {
-        if (err) {
-          console.log(`-----ERROR IN DB READ`)
-          console.log(err)
-          reject({error: err})
-        }
-        // found venues - update metrics - offered to client
-        if (result && result.isVerified) {          
-          let timestamp = Date.now() 
-          let id = result._id
-          client.db().collection('markets')
-                     .updateOne({ "_id": ObjectID(id) }, 
-                                { $set: {                                   
-                                  timestamp: timestamp,
-                                  beta: true,
-                                  name: name,
-                                  company: company,
-                                  url: website,
-                                  sector: sector,
-                                  comments: comments
-                                }})          
-          resolve(result)
-          return
-        }        
-        // no venues found 
-        // log metrics - geolocation needs venues       
-             
-        client.db().collection('markets').insertOne(newsubscriber)
-        resolve(newsubscriber)
-        return
+      client.db().collection('markets').aggregate([
+        {
+          "$geoNear": {
+              "near": {
+                  "type": "Point",
+                  "coordinates": [ -84.601614, 34.005286 ]
+              },
+              "distanceField": "calculated",
+              "maxDistance": 400,
+              "spherical": true
+            }
+          }          
+      ],
+      function(err, docs){
+          if (err){
+              console.log(err)
+          }
+          else{
+              docs.toArray((error, result) => {
+                if(error) console.log(error)
+                resolve(result)
+                return
+              })
+          }
       })
+      
     })    
   }
   return db

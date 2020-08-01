@@ -1,8 +1,8 @@
 var CACHE_NAME = 'dependencies-cache',
 	REQUIRED_FILES = [
 	  'index.html',
-	  'app.min.js',
-	  'styles.css'
+	  'js/app.js',
+	  'css/styles.css'
 	];
 
 self.addEventListener('install', function(event) {

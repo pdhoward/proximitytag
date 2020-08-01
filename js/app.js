@@ -94,32 +94,25 @@ if (navigator.geolocation) {
     // do a location lookup ... mongodb for a venue ... closest? or an Array?
     // use a redirect
     domOutput.focus();
+    findVenues(position)
   }
 
-  const processGeoLocation = (form, e) => {
-    const email = document.getElementById('email').value
+  // function to retrieve venues from mongodb - machine/markets
+  const findVenues = (position) => {
+    
     console.log(`---------STEP 1 - PROCESS Geo Location----`)
-    console.log(email) 
-    return fetch(`/.netlify/functions/geosearch`, {
+    console.log(position) 
+    return fetch(`/.netlify/functions/search`, {
       headers: {
         'Content-Type': 'application/json'},
       method: 'POST',
-      body: JSON.stringify({email})
+      body: JSON.stringify(position)
     })
     .then( async (result) => {
       console.log(`-----STEP 2 - Present Venue Options ----`)
-      //console.log(result)
-      //const response = await result.json()
-      em = await result.json()
-      console.log(em)
-
-      // send to canvas
-      if (!em.isVerified) {
-        $('#dspemail').css('display','none');
-        $('#dspverify').css('display','inline');
-      } else {
-        form.innerHTML = duplicate;
-      }         
+     
+      let venues = await result.json()
+      console.log(venues)       
                     
       return {message: 'success'}
     })
@@ -128,6 +121,7 @@ if (navigator.geolocation) {
     })
   }
 
+  // register click event
 domButton.addEventListener('click', fetchGeo, false);
 } else {
   userFeedback('This app uses features not supported by your browser');
