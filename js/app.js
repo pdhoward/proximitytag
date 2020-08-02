@@ -1,9 +1,9 @@
-var domButton = document.getElementById('huebutton'),
-  domOutput = document.getElementById('output'),
-  domLocale = document.getElementById('longlat'),
-  lightUnit = 180 / 100,
-  domColorvalue = document.createElement('div'),
-  domFooter = document.querySelector('.txt-small');
+const domButton = document.getElementById('huebutton')
+const domOutput = document.getElementById('output')
+const domLocale = document.getElementById('longlat')
+const lightUnit = 180 / 100
+const domColorvalue = document.createElement('div')
+const domFooter = document.querySelector('.txt-small')
 
 if (navigator.geolocation) {
 
