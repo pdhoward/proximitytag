@@ -1,6 +1,7 @@
 const domButton = document.getElementById('huebutton')
 const domOutput = document.getElementById('output')
 const domLocale = document.getElementById('longlat')
+const domVenues = document.getElementById('venues')
 const lightUnit = 180 / 100
 const domColorvalue = document.createElement('div')
 const domFooter = document.querySelector('.txt-small')
@@ -112,12 +113,33 @@ if (navigator.geolocation) {
       console.log(`-----STEP 2 - Present Venue Options ----`)
      
       let venues = await result.json()
-      console.log(venues)       
+      console.log(`Found ${venues.length} venues`)
+      
+      // only show 8 venues
+      let maxVenues = 8
+      let x = 0
+
+      if (maxVenues > venues.length) {
+        x = venues.length
+      } else {
+        x = maxVenues
+      }
+
+      domButton.style.display = 'none'
+
+      for (var i = 0; i < x; i++) {
+        var btn = document.createElement("button");
+        btn.classList.add('block')
+        var t = document.createTextNode(venues[i].name);
+        btn.appendChild(t);
+        domVenues.appendChild(btn);
+      }
+      
                     
       return {message: 'success'}
     })
     .catch(error => {
-      form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
+      console.log(error)
     })
   }
 

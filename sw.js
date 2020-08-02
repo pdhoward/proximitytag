@@ -1,9 +1,11 @@
 var CACHE_NAME = 'dependencies-cache',
-	REQUIRED_FILES = [
-	  'index.html',
+
+/* Register these files ultimately
+    'index.html',
 	  'js/app.js',
-	  'css/styles.css'
-	];
+    'css/styles.css'
+*/
+	REQUIRED_FILES = [];
 
 self.addEventListener('install', function(event) {
 	event.waitUntil(
