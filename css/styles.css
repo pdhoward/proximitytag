@@ -78,8 +78,17 @@ h2 {
     line-height: 1;
 }
 
+h6 {
+    font-weight: lighter;
+    line-height: 1;
+}
+
 a {
     color: #fff;
+}
+
+a+a {
+    margin-left: 20px;
 }
 
 button {
