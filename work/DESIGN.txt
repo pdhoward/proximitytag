@@ -1,0 +1,42 @@
+
+TAG
+-------------------------
+
+0. insert instructions in bulletin board
+> change colors on each step with new instructions
+
+-------------------------
+1. Venues Nearby
+> include button - home
+
+-------------------------
+
+2. TOGGLE PROCESS
+> select venue
+
+> receive choices of
+
+- offers
+- map
+- reserve (restaurants and hotels only)
+- hours (open graph)
+
+> need back button (hide and unhide)
+
+---------------------------
+3. manage with config variable as to whether grab real gps?
+1 app - proximity -test   (or put a test icon on bottom)
+1 app - proximity - live (hit the real button)
+
+------------------------------
+4. need a venue profile collection on Atlas
+> business (address, hours, map)
+> offers
+> chat
+> features
+> reserve - robotic app driven off calendar?
+> menu
+> Like us
+
+
+
