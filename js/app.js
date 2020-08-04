@@ -136,6 +136,7 @@ if (navigator.geolocation) {
         btn.setAttribute("href", venues[i].map )
         btn.setAttribute("data-index", i )
         btn.setAttribute("style", "background-color: blue" )
+        btn.setAttribute("target", "_blank" )
         domVenues.appendChild(btn);
       }
       
