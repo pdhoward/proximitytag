@@ -15,3 +15,6 @@ PROXIMITY TAG permits a platform user to identify their location and receive spo
 ### LICENSE
 
 MIT
+
+### CSP
+<meta http-equiv="Content-Security-Policy" content="style-src 'self' 'sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I'; script-src 'self' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com; img-src 'self' https://res.cloudinary.com; font-src 'self' https://stackpath.bootstrapcdn.com; child-src 'self'; manifest-src 'self'; worker-src 'self';">

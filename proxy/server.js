@@ -46,8 +46,7 @@ app.get('/', (req, res)=>{
 })
 
 app.use('*', (req, res, next) => {
-  console.log(`----------------in the server -----------`)
-  console.log(req.body)
+  console.log(`----------------in the server -----------`)  
   console.log(req.originalUrl)  
  next()
 })

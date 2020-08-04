@@ -6,6 +6,7 @@ const lightUnit = 180 / 100
 const domColorvalue = document.createElement('div')
 const domFooter = document.querySelector('.txt-small')
 
+
 if (navigator.geolocation) {
 
   if (navigator.permissions) {
@@ -128,10 +129,13 @@ if (navigator.geolocation) {
       domButton.style.display = 'none'
 
       for (var i = 0; i < x; i++) {
-        var btn = document.createElement("button");
-        btn.classList.add('block')
+        var btn = document.createElement("a");
+        btn.classList.add('button4')
         var t = document.createTextNode(venues[i].name);
         btn.appendChild(t);
+        btn.setAttribute("href", venues[i].map )
+        btn.setAttribute("data-index", i )
+        btn.setAttribute("style", "background-color: blue" )
         domVenues.appendChild(btn);
       }
       
@@ -149,3 +153,4 @@ domButton.addEventListener('click', fetchGeo, false);
   userFeedback('This app uses features not supported by your browser');
   domOutput.focus();
 }
+
