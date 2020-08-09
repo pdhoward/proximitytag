@@ -29,16 +29,22 @@ exports.createClient = (client) => {
   // https://mongodb.github.io/node-mongodb-native/2.2/tutorials/geospatial-search/
   
   db.getVenues = (obj) => {
+    // get the locations from obj - need to parse
+    console.log(obj)
+    // test coordinates for Austin - using market test dataset
+    let testLongitude = '-97.7430608'
+    let testLatitude = '30.267153'
+    let testRange = 600
     return new Promise ((resolve, reject) => {
       client.db().collection('markets').aggregate([
         {
           "$geoNear": {
               "near": {
                   "type": "Point",
-                  "coordinates": [ -84.601614, 34.005286 ]
+                  "coordinates": [ testLongitude, testLatitude ]
               },
               "distanceField": "calculated",
-              "maxDistance": 400,
+              "maxDistance": 600,
               "spherical": true
             }
           }          

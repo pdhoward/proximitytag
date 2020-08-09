@@ -1,4 +1,14 @@
 
+auto deployment
+https://vercel.com/docs/v2/platform/deployments
+
+conceptually - like generating multiple blog pages in a deployment, with each blog post having its own content and path
+
+https://nextjs.org/learn/basics/dynamic-routes/page-path-external-data
+
+https://github.com/vercel/next-learn-starter/tree/master/dynamic-routes-starter
+
+--------------
 TAG
 -------------------------
 
