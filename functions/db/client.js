@@ -32,9 +32,9 @@ exports.createClient = (client) => {
     // get the locations from obj - need to parse
     console.log(obj)
     // test coordinates for Austin - using market test dataset
-    let testLongitude = '-97.7430608'
-    let testLatitude = '30.267153'
-    let testRange = 600
+    let testLongitude = -97.7430608
+    let testLatitude = 30.267153
+    let testRange = 1000
     return new Promise ((resolve, reject) => {
       client.db().collection('markets').aggregate([
         {
