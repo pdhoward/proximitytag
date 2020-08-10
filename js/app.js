@@ -133,7 +133,7 @@ if (navigator.geolocation) {
         btn.classList.add('button4')
         var t = document.createTextNode(venues[i].name);
         btn.appendChild(t);
-        btn.setAttribute("href", venues[i].map )
+        btn.setAttribute("href", "https://findit.vercel.app/venues/" + venues[i].marketid )
         btn.setAttribute("data-index", i )
         btn.setAttribute("style", "background-color: blue" )
         btn.setAttribute("target", "_blank" )
