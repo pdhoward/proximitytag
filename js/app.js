@@ -101,7 +101,7 @@ if (navigator.geolocation) {
   }
 
   // function to retrieve venues from mongodb - machine/markets
-  const findVenues = (position) => {    
+  function findVenues(position) {    
     let coordinates = {}
     coordinates.latitude = position.coords.latitude
     coordinates.longitude = position.coords.longitude
@@ -149,7 +149,7 @@ if (navigator.geolocation) {
   }
 
   // function to retrieve test venues from mongodb - machine/markets
-  const fetchTestVenues = () => {    
+ function fetchTestVenues() {    
     let coordinates = {}
     // test coordinates for Austin - corresponds with test dataset
     coordinates.longitude = -97.7430608
