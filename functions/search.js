@@ -21,10 +21,7 @@ exports.handler = async function(event, context) {
   } else {    
     conn = await createConnection()
     client = await createClient(conn)
-  }         
-  
-  console.log(`----FUNCTION GET VENUES -------`)    
-
+  }
   const response = await client.getVenues(location)
     return {
         headers: {

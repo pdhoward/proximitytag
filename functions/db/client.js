@@ -28,27 +28,20 @@ exports.createClient = (client) => {
   }
   // https://mongodb.github.io/node-mongodb-native/2.2/tutorials/geospatial-search/
   
-  db.getVenues = (obj) => {
-    let latitude
-    let longitude    
-
-    let distance = 1600
-    console.log(`----- Inside of Get Venues Function ----`)
-    console.log(obj)
-    if (obj.timestamp){
-      latitude = obj.latitude
-      longitude = obj.longitude 
-    } else {
-      console.log(`----error detected. no coordinates---`)
-      console.log(`inside functions/db/client`)
-    }
+  db.getVenues = (obj) => {    
     
-    // test coordinates for Austin - using market test dataset
-    //let testLongitude = -97.7430608
-    //let testLatitude = 30.267153
-    
-    let testRange = 1600
     return new Promise ((resolve, reject) => {
+      let latitude
+      let longitude
+      let distance = 1600    
+
+      if (obj.timestamp){
+        latitude = obj.latitude
+        longitude = obj.longitude 
+      } else {
+        console.log(`----error detected. no coordinates---`)
+        console.log(`inside functions/db/client`)
+      }      
       client.db().collection('markets').aggregate([
         {
           "$geoNear": {
@@ -65,8 +58,9 @@ exports.createClient = (client) => {
       function(err, docs){
           if (err){
               console.log(err)
+              reject(err)
           }
-          else{
+          else {
               docs.toArray((error, result) => {
                 if(error) console.log(error)
                 resolve(result)
