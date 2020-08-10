@@ -47,7 +47,8 @@ app.get('/', (req, res)=>{
 
 app.use('*', (req, res, next) => {
   console.log(`----------------in the server -----------`)  
-  console.log(req.originalUrl)  
+  //console.log(req.originalUrl)
+  //console.log(req.body)
  next()
 })
 app.use('*', [proxy])

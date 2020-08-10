@@ -103,12 +103,16 @@ if (navigator.geolocation) {
   const findVenues = (position) => {
     
     console.log(`---------STEP 1 - PROCESS Geo Location----`)
-    console.log(position) 
+    console.log(position)
+    let coordinates = {}
+    coordinates.latitude = position.coords.latitude
+    coordinates.longitude = position.coords.longitude
+    coordinates.timestamp = position.timestamp  
     return fetch(`/.netlify/functions/search`, {
       headers: {
         'Content-Type': 'application/json'},
       method: 'POST',
-      body: JSON.stringify(position)
+      body: JSON.stringify(coordinates)
     })
     .then( async (result) => {
       console.log(`-----STEP 2 - Present Venue Options ----`)
