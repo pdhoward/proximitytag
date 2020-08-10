@@ -30,10 +30,7 @@ exports.createClient = (client) => {
   
   db.getVenues = (obj) => {
     let latitude
-    let longitude
-    // test coordinates for Austin - corresponds with test dataset
-    let testLongitude = -97.7430608
-    let testLatitude = 30.267153
+    let longitude    
 
     let distance = 1600
     console.log(`----- Inside of Get Venues Function ----`)
@@ -42,8 +39,8 @@ exports.createClient = (client) => {
       latitude = obj.latitude
       longitude = obj.longitude 
     } else {
-      latitude = testLatitude
-      longitude = testLongitude 
+      console.log(`----error detected. no coordinates---`)
+      console.log(`inside functions/db/client`)
     }
     
     // test coordinates for Austin - using market test dataset
