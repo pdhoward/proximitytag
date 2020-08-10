@@ -105,7 +105,9 @@ if (navigator.geolocation) {
     let coordinates = {}
     coordinates.latitude = position.coords.latitude
     coordinates.longitude = position.coords.longitude
-    coordinates.timestamp = position.timestamp  
+    coordinates.timestamp = position.timestamp
+    console.log(`---GeoLocation Fetched ---`)
+    console.log(coordinates)
     return fetch(`/.netlify/functions/search`, {
       headers: {
         'Content-Type': 'application/json'},

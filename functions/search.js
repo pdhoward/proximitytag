@@ -22,6 +22,8 @@ exports.handler = async function(event, context) {
     conn = await createConnection()
     client = await createClient(conn)
   }
+  console.log(`--- Search Function -----`)
+  console.log(location)
   const response = await client.getVenues(location)
     return {
         headers: {
