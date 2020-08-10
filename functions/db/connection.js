@@ -2,7 +2,7 @@ require('dotenv').config()
 const {MongoClient} = require('mongodb')
 
 // Initialize connection to database
-const url = process.env.machine || "mongodb://localhost/auth"
+const url = process.env.MACHINE || "mongodb://localhost/auth"
 const options = {
         useNewUrlParser: true,       
         useUnifiedTopology: true }
