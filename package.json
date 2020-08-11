@@ -30,6 +30,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "mongodb": "^3.6.0",
+    "mongoose": "^5.9.28",
     "netlify-lambda": "^2.0.1",
     "node-fetch": "^2.6.0"
   },
