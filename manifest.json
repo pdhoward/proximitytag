@@ -1,32 +1,31 @@
 {
-  "name": "PROXIMITY - Venues Nearby?",
-  "short_name" : "Proximity Venues",
+  "name": "PROXIMITY VENUES NEARBY",
+  "short_name" : "NEABY",
   "description" : "Proximity delivers curated messages from participating venues",
   "icons": [
        {
-      "src": "assets/icons/icon-96x96.png",
+      "src": "assets/icon-96x96.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "assets/icons/icon-144x144.png",
+      "src": "assets/icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png"
     },     
     {
-      "src": "assets/icons/icon-192x192.png",
-      "sizes": "196x196",
+      "src": "assets/icon-192x192.png",
+      "sizes": "192x192",
       "type": "image/png"
     },    
     {
-      "src": "assets/icons/icon-512x512.png",
+      "src": "assets/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable any"
+      "type": "image/png"    
     }
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#699da0",
-  "background_color": "#699da0"
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
