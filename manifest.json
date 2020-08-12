@@ -1,18 +1,8 @@
 {
   "name": "PROXIMITY VENUES NEARBY",
-  "short_name" : "NEABY",
-  "description" : "Proximity delivers curated messages from participating venues",
-  "icons": [
-       {
-      "src": "/assets/icons/icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/icons/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },     
+  "short_name" : "NEARBY",
+  "description" : "Curated venue messages",
+  "icons": [        
     {
       "src": "/assets/icons/icon-192x192.png",
       "sizes": "192x192",
