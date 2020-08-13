@@ -124,6 +124,10 @@ if (navigator.geolocation) {
         x = venues.length
       } else {
         x = maxVenues
+      }      
+
+      if (venues.length === 0) {
+        userFeedback('No participating venues found near you. Try the test button ➹ below to experience the joy.');
       }
 
       domButton.style.display = 'none'
@@ -176,8 +180,10 @@ if (navigator.geolocation) {
       } else {
         x = maxVenues
       }
+      userFeedback()
 
       domButton.style.display = 'none'
+      userFeedback('Sample of test locations in Austin, TX. Connected conversations at scale')
 
       for (var i = 0; i < x; i++) {
         var btn = document.createElement("a");
