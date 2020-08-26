@@ -32,7 +32,7 @@ exports.createClient = (client) => {
     return new Promise ((resolve, reject) => {
       let latitude
       let longitude
-      let distance = 3000    
+      let distance = 100000 
 
       if (obj.timestamp){
         latitude = obj.latitude
