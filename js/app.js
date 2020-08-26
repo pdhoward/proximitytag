@@ -127,7 +127,7 @@ if (navigator.geolocation) {
       }      
 
       if (venues.length === 0) {
-        userFeedback('No participating venues found near you. Try the test button ➹ below to experience the joy.');
+        userFeedback('Sorry! No participating venues found near you. Just ramping up. Try the test button ➹ below to experience the joy.');
       }
 
       domButton.style.display = 'none'
