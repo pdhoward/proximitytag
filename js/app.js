@@ -101,13 +101,26 @@ if (navigator.geolocation) {
   }
 
   // function to retrieve venues from mongodb - machine/markets
-  function findVenues(position) {    
+  function findVenues(position) { 
+
+    ////////////////////////////////TEST CODE FOR BETA LAUNCH//////////////////////
+    let coordinates = {}
+    // test coordinates for Austin - corresponds with test dataset
+    coordinates.longitude = -97.7430608
+    coordinates.latitude = 30.267153    
+    coordinates.timestamp = Date.now()  
+    domColorvalue.className = 'color txt-small notranslate';
+    domColorvalue.textContent = 'Demonstration: Fetching Venues in Austin, TX';
+    domOutput.appendChild(domColorvalue);
+    /////////////////////////////////////////////////////////////////////////////
+    /*
     let coordinates = {}
     coordinates.latitude = position.coords.latitude
     coordinates.longitude = position.coords.longitude
     coordinates.timestamp = position.timestamp
     console.log(`---GeoLocation Fetched ---`)
     console.log(coordinates)
+    */
     return fetch(`/.netlify/functions/search`, {
       headers: {
         'Content-Type': 'application/json'},
@@ -130,7 +143,12 @@ if (navigator.geolocation) {
         userFeedback('Sorry! No participating venues found near you. Just ramping up. Try the test button ➹ below to experience the joy.');
       }
 
+      //domButton.style.display = 'none'
+      /////////////////////////////////////TEST CODE INSERTED FOR BETA LAUNCH/////////////
+      userFeedback()
       domButton.style.display = 'none'
+      userFeedback(`Thank you for visiting our live demo. Please click on a test store below. Or sign up for access to our live site` )
+      /////////////////////////////////////////////////////////////////////////////
 
       for (var i = 0; i < x; i++) {
         var btn = document.createElement("a");
