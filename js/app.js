@@ -3,6 +3,7 @@ const domOutput = document.getElementById('output')
 const domLocale = document.getElementById('longlat')
 const domVenues = document.getElementById('venues')
 const domTestLocation = document.getElementById('testlocation')
+const domHideTest = document.getElementById('footer')
 const lightUnit = 180 / 100
 const domColorvalue = document.createElement('div')
 const domFooter = document.querySelector('.txt-small')
@@ -147,6 +148,7 @@ if (navigator.geolocation) {
       /////////////////////////////////////TEST CODE INSERTED FOR BETA LAUNCH/////////////
       userFeedback()
       domButton.style.display = 'none'
+      domHideTest.style.visibility='hidden'
       userFeedback(`Thank you for visiting our live demo. Please click on a test store below. Or sign up for access to our live site` )
       /////////////////////////////////////////////////////////////////////////////
 
@@ -201,6 +203,7 @@ if (navigator.geolocation) {
       userFeedback()
 
       domButton.style.display = 'none'
+      domHideTest.style.visibility='hidden'
       userFeedback('Sample of test locations in Austin, TX. Connected conversations at scale')
 
       for (var i = 0; i < x; i++) {
